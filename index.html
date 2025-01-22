@@ -1,0 +1,850 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AVR Swarna Mahal</title>
+        
+        <style>
+         *{
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    color: white;
+    z-index: 1000;
+    width: 100%;
+    
+}
+
+
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: #343a40;
+    color:black;
+    font-size: 0.9rem;
+    gap: 5px;
+    background-color:burlywood;
+}
+header.contact{
+    margin:80px 
+}
+
+.second-bar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 500px; 
+    margin-top: 25px;
+    margin-bottom: 15px;   
+}
+.search{
+    border: 0.5px solid rgb(175, 12, 12);
+    width: 350px;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-left: 350px;
+}
+#search_bar{
+    width: 322px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    border: none;
+
+}
+#icon-search{
+    background-color: rgb(175, 12, 12);
+    color:white;
+    width: 28px;
+    height: 30px;
+    
+    
+}
+#goldrate{
+    width: 250px;
+    height: 25px;
+    background-color: rgb(175, 12, 12);
+    color: white;
+    margin-left: 250px;
+    border: none;
+    font-size: 12px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color:rgb(154, 11, 11);
+    
+}
+
+
+.menu {
+                list-style: none;
+                display: flex;
+                gap: 5rem;
+                margin: 0;
+                padding: 0;
+                margin-left: 250px;
+            }
+
+            .menu li {
+                position: relative;
+            }
+
+            .menu li a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+
+            .menu li ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                list-style: none;
+                padding: 0;
+                background-color: white;
+                width: 200px;
+            }
+
+            .menu li:hover > ul {
+                display: block;
+            }
+
+            .menu li ul li a {
+                padding: 0.5rem;
+                color:black;
+                text-decoration: none;
+                display: block;
+                font-weight: normal;
+            }
+
+            .menu li ul li a:hover {
+                color:orangered;
+            }
+
+/* .body-content{
+    width: 100%;
+    
+} */
+ .body {
+    width: 100%;
+}
+
+.body-content {
+    width: 100%;
+    height: 100vh;  
+   display: flex;
+    justify-content: center;
+   align-items: center;
+    overflow: hidden; 
+}
+
+.body-content img {
+    width: 100%;
+    height: 100%;
+   object-fit: cover; 
+ } 
+
+
+
+.main {
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.main-content  {
+    margin: 0;
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
+}
+
+/*slider section*/
+.slide-content{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px auto;
+}
+.slider-track{
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+.slider-item{
+    flex: 0 0 calc(16.66%-20px);
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.slider-item img{
+    width: 80%;
+    height: 50px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slider-item p{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+.slider-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+.prev-button{
+    left: 10px;
+}
+.next-button{
+    right: 10px;
+}
+.slider-button:hover{
+    background-color: grey;
+}
+.assurance-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #fff;
+  }
+
+  .assurance-left {
+    flex: 1;
+    text-align: center;
+  }
+
+  .assurance-left h1 {
+    font-size: 24px;
+    color: #751d1d;
+    margin-bottom: 20px;
+  }
+
+  .assurance-left img {
+    width: 200px;
+    height: auto;
+  }
+
+  .assurance-right {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-left: 20px;
+  }
+
+  .assurance-item {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .assurance-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .assurance-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    
+  }
+
+  .assurance-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .slider-item {
+      flex: 0 0 calc(33.33% - 20px);
+    }
+
+    .slider-button {
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+
+    .assurance-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .assurance-right {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slider-item {
+      flex: 0 0 calc(50% - 20px);
+    }
+
+    .slider-button {
+      padding: 5px 8px;
+      font-size: 14px;
+    }
+
+    .assurance-right {
+      grid-template-columns: 1fr;
+    }
+  }
+  .bespoke-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f0f0f0;
+  }
+
+  .bespoke-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .bespoke-section p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .bespoke-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #751d1d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .bespoke-button:hover {
+    background-color: #d02424;
+  }
+  .bespoke-section {
+padding: 50px 0;
+background-color: #f0f0f0;
+text-align: center;
+}
+
+.bespoke-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.bespoke-text {
+flex: 0 0 50%;  
+text-align: left;
+padding-right: 20px;
+}
+
+.bespoke-image {
+flex: 0 0 50%;  
+text-align: center;
+}
+
+.bespoke-image img {
+width: 100%;
+height: auto;
+max-width: 550px;
+border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+.bespoke-content {
+  flex-direction: column;
+  text-align: center;
+}
+
+.bespoke-text {
+  padding-right: 0;
+  flex: 0 0 100%; /* 100% width on smaller screens */
+  margin-bottom: 20px;
+}
+
+.bespoke-image {
+  flex: 0 0 100%;
+}
+.connect-container {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #751d1d; 
+  }
+
+  .connect-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+
+  .connect-option {
+    text-align: center;
+    width: calc(25% - 20px);
+  }
+
+  .connect-option img {
+    width: 50px; 
+    margin-bottom: 10px;
+  }
+
+  .connect-option p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .connect-option a {
+   
+    text-decoration: none;
+  }
+
+  
+
+  footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 40px;
+  background-color: #751d1d;
+  color:white;
+  
+  font-size: 14px;
+  height: 200px;
+}
+
+footer .logo img {
+  height: 50px; 
+}
+
+footer .footerc ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footerc li {
+  margin-right: 20px;
+  position: relative;
+}
+
+footer .footerc a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+
+
+
+footer .contact-info {
+  max-width: 300px;
+}
+
+footer .contact-info h3 {
+  margin-bottom: 10px;
+  
+}
+
+footer .contact-info p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+footer .social-media {
+  display: flex;
+  margin-top: 10px;
+}
+
+footer .social-media a {
+  margin: 0 10px;
+}
+
+footer .social-media img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  footer {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  footer .logo {
+      margin-bottom: 20px;
+  }
+
+  footer .contact-info {
+      margin-top: 20px;
+  }
+}
+}
+
+
+     </style>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="top-bar">
+                <span class="contact">
+                    <div class="left">
+                        <i class="fa-solid fa-phone"></i>1800 9876 9876
+                        <i class="fa-solid fa-video"></i>video call
+                    </div>
+                </span>
+                <div class="right">
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </div>
+            </div>
+
+            <div class="second-bar">
+                <div class="logo">
+                    <img src="./logo.png" alt="logo">
+                </div>
+                <div class="search">
+                    <input type="text"
+                        placeholder="search for(price,gifts,celebrations)"
+                        id="search_bar">
+                    <i class="fa-solid fa-magnifying-glass"
+                        id="icon-search"></i>
+                </div>
+                <div>
+                    <button id="goldrate">TODAY'S GOLD RATE
+                        -22K-1GM:RS.7525/-</button>
+                </div>
+            </div>
+            <nav class="navbar">
+                <ul class="menu">
+                    <li>
+                        <a href="#">Jewellery</a>
+                        <ul>
+                            <li><a href="#">Gold Jewellery</a></li>
+                            <li><a href="#">Diamond Jewellery</a></li>
+                            <li><a href="#">Platinum Jewellery</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Gold</a>
+                        <ul>
+                            <li><a href="#">Gold Coins</a></li>
+                            <li><a href="#">Gold Bars</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Diamond</a>
+                        <ul>
+                            <li><a href="#">Loose Diamonds</a></li>
+                            <li><a href="#">Diamond Rings</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Solitaire</a>
+
+                    </li>
+                    <li>
+                        <a href="#">Silver</a>
+
+                    </li>
+                    <li>
+                        <a href="#">Platinum</a>
+
+                    </li>
+                    <li>
+                        <a href="#">Gold Coin</a>
+
+                    </li>
+                    <li>
+                        <a href="#">More</a>
+                        <ul>
+                            <li><a href="#"> lock your gold</a></li>
+                            <li><a href="#"> jewelary purchases</a></li>
+                            <li><a href="#"> fixed deposite</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <section class="body">
+            <div class="body-content">
+                <img src="./pic1.jpg" alt="kumari">
+            </div>
+        </section>
+        <div class="slide-content">
+            <button class=" slider-button prev-button">&#10094;</button>
+            <div class="slider-track">
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/home/Ring.png"
+                        alt="ring">
+                    <p>RING</p>
+                </div>
+
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/home/bangles.png"
+                        alt="bangle">
+                    <p>BANGLE</p>
+                </div>
+                <div class="slider-item">
+                    <img src="https://avrswarnamahal.com/assets/imgs/coin.png"
+                        alt="coin">
+                    <p>COIN</p>
+                </div>
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/choker-slider.png"
+                        alt="Choker">
+                    <p>CHOKER</p>
+                </div>
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/Haram-slider.png"
+                        alt="HARAM">
+                    <p>HARAM</p>
+                </div>
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/Nosepin-slider.png"
+                        alt="NOSEPIN">
+                    <p>NOSEPIN</p>
+                </div>
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/Thali-slider.png"
+                        alt="THALI">
+                    <p>THALI</p>
+                </div>
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/sub-menu/Toys-For-Boys.jpg"
+                        alt="TOYS">
+                    <p>TOYS</p>
+                </div>
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/home/earring.png"
+                        alt="EARRING">
+                    <p>EARRING</p>
+                </div>
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/home/pendent.png"
+                        alt="PENDENT">
+                    <p>PENDENT</p>
+                </div>
+                <div class="slider-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/Necklace-slider.png"
+                        alt="NECKLACE">
+                    <p>NECKLACE</p>
+                </div>
+            </div>
+            <button class=" slider-button next-button">&#10095;</button>
+        </div>
+        <div class="assurance-section">
+            <div class="assurance-left">
+                <h1>Our Assurance</h1>
+                <img
+                    src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/assurence-img.png"
+                    alt="Assurance Icon">
+            </div>
+            <div class="assurance-right">
+                <div class="assurance-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/ass-1.png"
+                        alt="Assurance 1">
+                    <p>100% Authentic</p>
+                </div>
+                <div class="assurance-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/ass-2.png"
+                        alt="Assurance 2">
+                    <p>Trusted Quality</p>
+                </div>
+                <div class="assurance-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/ass-3.png"
+                        alt="Assurance 3">
+                    <p>Exclusive Designs</p>
+                </div>
+                <div class="assurance-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/ass-4.png"
+                        alt="Assurance 4">
+                    <p>100% Buy Back on Diamonds</p>
+                </div>
+                <div class="assurance-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/ass-5.png"
+                        alt="Assurance 5">
+                    <p>Accurate Appraisal of Old Jewellery</p>
+                </div>
+                <div class="assurance-item">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/ass-6.png"
+                        alt="Assurance 6">
+                    <p>Secured Jewellery Purchase Plan</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="bespoke-section">
+            <div class="bespoke-content">
+                <div class="bespoke-image">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/AVR-create.jpg"
+                        alt="Bespoke Design">
+                </div>
+                <div class="bespoke-text">
+                    <h2>CREATE A BESPOKE DESIGN</h2>
+                    <p>Unlimited imagination, a heritage of exceptional
+                        craftsmanship and passion for creating your dream comes
+                        true with jewellery crafted by our finest designers.</p>
+                    <a href="#" class="bespoke-button">BOOK AN APPOINTMENT</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="connect-container">
+            <h2>CONNECT WITH US</h2>
+            <p>We are always available to guide you at your convenience.</p>
+
+            <div class="connect-options">
+                <div class="connect-option">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-whats.png"
+                        alt="WhatsApp">
+                    <p>Connect On <br> WhatsApp</p>
+                    <a href="#">Connect</a>
+                </div>
+                <div class="connect-option">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-calen.png"
+                        alt="Appointment">
+                    <p>Book <br> Appointment</p>
+                    <a href="#">Book</a>
+                </div>
+                <div class="connect-option">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-video.png"
+                        alt="Video Call">
+                    <p>Schedule a <br> Video Call</p>
+                    <a href="#">Schedule</a>
+                </div>
+                <div class="connect-option">
+                    <img
+                        src="https://avrswarnamahal.com/assets/imgs/new-text.png"
+                        alt="Chat">
+                    <p>Contact us <br> Chat with Us</p>
+                    <a href="#">Connect</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="logo">
+                <img
+                    src="https://avrswarnamahal.com/assets/imgs/new-home-imgs/footer-logo-img.png"
+                    alt="AVR Swarnamahal Logo">
+                <p>Shop our entire lineup of fine faves in store, get styled and
+                    join the Fine Crew.<br> Download Our free App</p>
+            </div>
+            <nav class="footerc">
+                <ul>
+                    <li>JEWELLERY</li>
+                    <li>GOLD</li>
+                    <li>DIAMOND</li>
+                    <li>SOLITAIRE</li>
+                    <li>SILVER</li>
+                    <li>PLATINUM</li>
+                    <li>GOLD COIN</li>
+                    <li>MORE</li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <h3>CONTACT US</h3>
+                <p>AVR Swarnamahal Jewellery Ltd.</p>
+                <p>251-A, Omalur Main Road</p>
+                <p>Swarnapuri, Salem-636 004, Tamil Nadu, India.</p>
+                <p>Toll Free - Tamil Nadu: 1800-425-3307</p>
+                <p>Karnataka: 1800-425-0007</p>
+                <p>Phone: 0427-4047888</p>
+                <p>email: avrswarnamahal@gmail.com</p>
+            </div>
+
+        </footer>
+
+        <script src="./app.js"></script>
+
+    </body>
+</html>
